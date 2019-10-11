@@ -1,0 +1,5 @@
+military_order_chapter = {
+	icon = 17
+	knights = 25
+	light_cavalry = 100
+}

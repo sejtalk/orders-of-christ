@@ -1,0 +1,16 @@
+slots = {
+	horse = 1
+}
+
+OOC_destrier = {
+	command_modifier = {
+		cavalry = 0.05
+		speed = 0.05 
+	}
+	combat_rating = 15
+	quality = 4
+	flags = { horse blacklist }
+	stacking = no
+	picture = "GFX_plus2_axe"
+	slot = horse
+}

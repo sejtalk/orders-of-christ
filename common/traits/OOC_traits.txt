@@ -1,0 +1,8 @@
+holy_knight_leader = {
+	leader = yes
+	random = no
+	command_modifier = {
+		religious_enemy = 0.3
+		cavalry = 0.2
+	}
+}

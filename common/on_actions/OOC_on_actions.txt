@@ -1,0 +1,38 @@
+# A character asks to join a society. Only works on player
+# Root = Character
+# From = Society
+on_character_ask_to_join_society = {
+	events = {
+		OOC.1 #Join Military Order
+	}
+}
+on_society_bi_yearly_pulse = {
+	events = {
+		OOC.20 # Military Order quest tombola
+	}
+}
+# A character selects a focus
+# Root = Character
+on_focus_selected = {
+	events = {
+		OOC.23
+		OOC.24
+		OOC.25
+		OOC.26
+	}
+}
+on_new_holder = {
+	events = {
+		OOC.1000 #Join Military Order
+	}
+}
+on_new_holder_inheritance = {
+	events = {
+		OOC.1000 #Join Military Order
+	}
+}
+on_startup = {
+	events = {
+		OOC.1000 #Join Military Order
+	}
+}

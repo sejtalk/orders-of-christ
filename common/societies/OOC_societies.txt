@@ -1,0 +1,1026 @@
+military_order_templar = {
+	primary_attribute = martial
+	is_religious = yes
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	society_rank_up_decision = request_to_rank_up_within_military_order
+	sound = monastic_orders_interface
+	society_ranks_gfx = warriors_ranks
+	society_influence = no
+	
+	non_interference = {
+		always = yes
+	}
+    
+	active = {
+		has_dlc = "Holy Fury"
+		is_title_active = d_knights_templar
+	}
+	indestructible = yes
+	
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = { 
+					society = military_order_templar
+					rank = 1
+				}
+			}
+		}
+		is_adult = yes
+		is_female = no
+		NOT = { trait = excommunicated }
+		scaled_wealth = 0.25
+		hidden_trigger = {
+			NOT = { has_character_flag = society_join_block }
+		}
+		trigger_if = {
+			limit = { prisoner = yes }
+			prisoner = no
+		}
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	show_society = {
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+			society_member_of = military_order_templar
+		}
+	}
+
+	potential = { #if you change religion 
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	society_rank = { #"Knight"
+		level = 1
+		limit = 50 
+		startup_limit = 10
+		modifier = {
+			monthly_character_piety = 0.25
+		}
+		powers = {
+			warrior_lodge_duel #Passive Power: Unlocks Duel
+			monastic_orders_go_celibate #Power: Take a vow of  celibacy
+			monastic_orders_stop_celibate
+		}
+	}
+	
+	society_rank = { #"Commander"
+		level = 2
+		limit = 20
+		startup_limit = 6
+		modifier = {
+			monthly_character_piety = 0.5
+			combat_rating = 5
+			martial = 1
+		}
+		powers = {
+			warrior_lodge_summon_commander #Power: Summon Commander	
+			warrior_lodge_warrior_training #Power: Warrior Training			
+		}
+	}
+	
+	society_rank = { #"Master"
+		level = 3
+		limit = 10 
+		startup_limit = 4
+		modifier = {
+			monthly_character_piety = 0.75
+			combat_rating = 10
+			martial = 2
+		}
+		powers = {
+			warrior_lodge_inspire_warriors #Power: Inspire Warriors
+			military_order_create_chapter #Power: Create Local Chapter
+		}
+	}
+
+	society_rank = { #"Grandmaster"
+		level = 4
+		limit = 1
+		startup_limit = 1
+		modifier = { 
+			monthly_character_piety = 1
+			combat_rating = 15
+			martial = 3
+		}
+		powers = {
+			#warrior_lodge_indomitable #Passive Power: Indomitable
+			#warrior_lodge_call_to_glory #Power: Call to Glory
+			#warrior_lodge_choose_military_aspect #Power: Choose Military Aspect
+		}
+	}
+
+	plots = {
+	
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_military_order
+    	
+		per_attribute = {
+    		name = martial
+    		value = 0.25
+    	}
+		#virtues
+		has_trait = {
+			trait = chaste
+			value = 1
+		}
+		has_trait = {
+			trait = temperate
+			value = 1
+		}
+		has_trait = {
+			trait = charitable
+			value = 1
+		}
+		has_trait = {
+			trait = diligent
+			value = 1
+		}
+		has_trait = {
+			trait = patient
+			value = 1
+		}
+		has_trait = {
+			trait = kind
+			value = 1
+		}
+		has_trait = {
+			trait = humble
+			value = 1
+		}
+		# religious stuff
+		has_trait = {
+			trait = zealous
+			value = 3
+		}
+		has_trait = {
+			trait = crusader
+			value = 3
+		}
+		has_trait = {
+			trait = crusader_king
+			value = 4
+		}
+		has_trait = {
+			trait = crusader_queen
+			value = 4
+		}
+		has_trait = {
+			trait = pilgrim
+			value = 2
+		}
+		has_trait = {
+			trait = monk
+			value = 5
+		}
+		has_trait = {
+			trait = nun
+			value = 5
+		}
+		has_trait = {
+			trait = theologian
+			value = 1
+		}
+		# martial stuff
+		has_trait = {
+			trait = brave
+			value = 2
+		}
+		has_trait = {
+			trait = strong
+			value = 3
+		}
+		has_trait = {
+			trait = robust
+			value = 2
+		}
+		has_trait = {
+			trait = strategist
+			value = 1
+		}
+		has_trait = {
+			trait = duelist
+			value = 1
+		}
+		has_trait = {
+			trait = varangian
+			value = 1
+		}
+		#NEGATIVE modifiers
+		has_trait = {
+			trait = lustful
+			value = -1
+		}
+		has_trait = {
+			trait = gluttonous
+			value = -1
+		}
+		has_trait = {
+			trait = greedy
+			value = -1
+		}
+		has_trait = {
+			trait = slothful
+			value = -1
+		}
+		has_trait = {
+			trait = wroth
+			value = -1
+		}
+		has_trait = {
+			trait = envious
+			value = -1
+		}
+		has_trait = {
+			trait = proud
+			value = -1
+		}
+		has_trait = {
+			trait = craven
+			value = -3
+		}
+		has_trait = {
+			trait = weak
+			value = -2
+		}
+		has_trait = {
+			trait = feeble
+			value = -1
+		}
+		has_trait = {
+			trait = dwarf
+			value = -1
+		}
+		has_trait = {
+			trait = clubfooted
+			value = -1
+		}
+		has_trait = {
+			trait = hunchback
+			value = -1
+		}
+	}
+	
+	member_score_per_attribute = 0
+	member_score_per_rank = 0
+
+	member_score = {
+		value = 10
+
+		#POSITIVE modifiers
+		modifier = {
+			ai = yes
+			factor = 100
+		}
+	}	
+
+	startup_populate = {
+		trigger = {
+			ai = yes
+	    	controls_religion = no
+		   	religion = catholic
+			age = 16
+			is_female = no
+			is_in_society = no
+			NOT = { higher_tier_than = DUKE }
+			NOR = {
+				mercenary = yes
+				holy_order = yes
+			}
+			NOT = { trait = cynical }
+			NOT = { trait = excommunicated }
+			has_secret_religion_trait_trigger = no
+			OR = {
+				trait = zealous
+				martial = 12
+				has_lifestyle_martial_trigger = yes
+				has_education_martial_trigger = yes
+				OR = {
+					duelist_skill_is_medium_group_trigger = yes
+					duelist_skill_is_high_group_trigger = yes
+				}
+			}
+		}
+	}
+}
+military_order_hospitaller = {
+	primary_attribute = martial
+	is_religious = yes
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	society_rank_up_decision = request_to_rank_up_within_military_order
+	sound = monastic_orders_interface
+	society_ranks_gfx = warriors_ranks
+	society_influence = no
+	
+	non_interference = {
+		always = yes
+	}
+    
+	active = {
+		has_dlc = "Holy Fury"
+		is_title_active = d_knights_hospitaller
+	}
+	indestructible = yes
+	
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = { 
+					society = military_order_hospitaller
+					rank = 1
+				}
+			}
+		}
+		is_adult = yes
+		is_female = no
+		NOT = { trait = excommunicated }
+		scaled_wealth = 0.25
+		hidden_trigger = {
+			NOT = { has_character_flag = society_join_block }
+		}
+		trigger_if = {
+			limit = { prisoner = yes }
+			prisoner = no
+		}
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	show_society = {
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+			society_member_of = military_order_hospitaller
+		}
+	}
+
+	potential = { #if you change religion 
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	society_rank = { #"Knight"
+		level = 1
+		limit = 50 
+		startup_limit = 10
+		modifier = {
+			monthly_character_piety = 0.25
+		}
+		powers = {
+			warrior_lodge_duel #Passive Power: Unlocks Duel
+			monastic_orders_go_celibate #Power: Take a vow of  celibacy
+			monastic_orders_stop_celibate
+		}
+	}
+	
+	society_rank = { #"Commander"
+		level = 2
+		limit = 20
+		startup_limit = 6
+		modifier = {
+			monthly_character_piety = 0.5
+			combat_rating = 5
+			martial = 1
+		}
+		powers = {
+			warrior_lodge_summon_commander #Power: Summon Commander	
+			warrior_lodge_warrior_training #Power: Warrior Training			
+		}
+	}
+	
+	society_rank = { #"Master"
+		level = 3
+		limit = 10 
+		startup_limit = 4
+		modifier = {
+			monthly_character_piety = 0.75
+			combat_rating = 10
+			martial = 2
+		}
+		powers = {
+			warrior_lodge_inspire_warriors #Power: Inspire Warriors
+			military_order_create_chapter #Power: Create Local Chapter
+		}
+	}
+
+	society_rank = { #"Grandmaster"
+		level = 4
+		limit = 1
+		startup_limit = 1
+		modifier = { 
+			monthly_character_piety = 1
+			combat_rating = 15
+			martial = 3
+		}
+		powers = {
+			#warrior_lodge_indomitable #Passive Power: Indomitable
+			#warrior_lodge_call_to_glory #Power: Call to Glory
+			#warrior_lodge_choose_military_aspect #Power: Choose Military Aspect
+		}
+	}
+
+	plots = {
+	
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_military_order
+    	
+		per_attribute = {
+    		name = martial
+    		value = 0.25
+    	}
+		#virtues
+		has_trait = {
+			trait = chaste
+			value = 1
+		}
+		has_trait = {
+			trait = temperate
+			value = 1
+		}
+		has_trait = {
+			trait = charitable
+			value = 1
+		}
+		has_trait = {
+			trait = diligent
+			value = 1
+		}
+		has_trait = {
+			trait = patient
+			value = 1
+		}
+		has_trait = {
+			trait = kind
+			value = 1
+		}
+		has_trait = {
+			trait = humble
+			value = 1
+		}
+		# religious stuff
+		has_trait = {
+			trait = zealous
+			value = 3
+		}
+		has_trait = {
+			trait = crusader
+			value = 3
+		}
+		has_trait = {
+			trait = crusader_king
+			value = 4
+		}
+		has_trait = {
+			trait = crusader_queen
+			value = 4
+		}
+		has_trait = {
+			trait = pilgrim
+			value = 2
+		}
+		has_trait = {
+			trait = monk
+			value = 5
+		}
+		has_trait = {
+			trait = nun
+			value = 5
+		}
+		has_trait = {
+			trait = theologian
+			value = 1
+		}
+		# martial stuff
+		has_trait = {
+			trait = brave
+			value = 2
+		}
+		has_trait = {
+			trait = strong
+			value = 3
+		}
+		has_trait = {
+			trait = robust
+			value = 2
+		}
+		has_trait = {
+			trait = strategist
+			value = 1
+		}
+		has_trait = {
+			trait = duelist
+			value = 1
+		}
+		has_trait = {
+			trait = varangian
+			value = 1
+		}
+		#NEGATIVE modifiers
+		has_trait = {
+			trait = lustful
+			value = -1
+		}
+		has_trait = {
+			trait = gluttonous
+			value = -1
+		}
+		has_trait = {
+			trait = greedy
+			value = -1
+		}
+		has_trait = {
+			trait = slothful
+			value = -1
+		}
+		has_trait = {
+			trait = wroth
+			value = -1
+		}
+		has_trait = {
+			trait = envious
+			value = -1
+		}
+		has_trait = {
+			trait = proud
+			value = -1
+		}
+		has_trait = {
+			trait = craven
+			value = -3
+		}
+		has_trait = {
+			trait = weak
+			value = -2
+		}
+		has_trait = {
+			trait = feeble
+			value = -1
+		}
+		has_trait = {
+			trait = dwarf
+			value = -1
+		}
+		has_trait = {
+			trait = clubfooted
+			value = -1
+		}
+		has_trait = {
+			trait = hunchback
+			value = -1
+		}
+	}
+	
+	member_score_per_attribute = 0
+	member_score_per_rank = 0
+
+	member_score = {
+		value = 10
+
+		#POSITIVE modifiers
+		modifier = {
+			ai = yes
+			factor = 100
+		}
+	}	
+
+	startup_populate = {
+		trigger = {
+			ai = yes
+	    	controls_religion = no
+		   	religion = catholic
+			age = 16
+			is_female = no
+			is_in_society = no
+			NOT = { higher_tier_than = DUKE }
+			NOR = {
+				mercenary = yes
+				holy_order = yes
+			}
+			NOT = { trait = cynical }
+			NOT = { trait = excommunicated }
+			has_secret_religion_trait_trigger = no
+			OR = {
+				trait = zealous
+				martial = 12
+				has_lifestyle_martial_trigger = yes
+				has_education_martial_trigger = yes
+				OR = {
+					duelist_skill_is_medium_group_trigger = yes
+					duelist_skill_is_high_group_trigger = yes
+				}
+			}
+		}
+	}
+}
+military_order_teutonic = {
+	primary_attribute = martial
+	is_religious = yes
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	society_rank_up_decision = request_to_rank_up_within_military_order
+	sound = monastic_orders_interface
+	society_ranks_gfx = warriors_ranks
+	society_influence = no
+	
+	non_interference = {
+		always = yes
+	}
+    
+	active = {
+		has_dlc = "Holy Fury"
+		OR = {
+			is_title_active = d_teutonic_order
+			is_title_active = k_teutonic_state
+		}
+	}
+	indestructible = yes
+	
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = { 
+					society = military_order_teutonic
+					rank = 1
+				}
+			}
+		}
+		is_adult = yes
+		is_female = no
+		NOT = { trait = excommunicated }
+		scaled_wealth = 0.25
+		hidden_trigger = {
+			NOT = { has_character_flag = society_join_block }
+		}
+		trigger_if = {
+			limit = { prisoner = yes }
+			prisoner = no
+		}
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	show_society = {
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+			society_member_of = military_order_templar
+		}
+	}
+
+	potential = { #if you change religion 
+		OR = {
+			religion = catholic
+			AND = {
+				is_heretic = no
+				OR = {
+					religion = fraticelli
+					religion = waldensian
+					religion = lollard
+					religion = cathar
+				}
+			}
+		}
+	}
+
+	society_rank = { #"Knight"
+		level = 1
+		limit = 50 
+		startup_limit = 10
+		modifier = {
+			monthly_character_piety = 0.25
+		}
+		powers = {
+			warrior_lodge_duel #Passive Power: Unlocks Duel
+			monastic_orders_go_celibate #Power: Take a vow of  celibacy
+			monastic_orders_stop_celibate
+		}
+	}
+	
+	society_rank = { #"Commander"
+		level = 2
+		limit = 20
+		startup_limit = 6
+		modifier = {
+			monthly_character_piety = 0.5
+			combat_rating = 5
+			martial = 1
+		}
+		powers = {
+			warrior_lodge_summon_commander #Power: Summon Commander	
+			warrior_lodge_warrior_training #Power: Warrior Training			
+		}
+	}
+	
+	society_rank = { #"Master"
+		level = 3
+		limit = 10 
+		startup_limit = 4
+		modifier = {
+			monthly_character_piety = 0.75
+			combat_rating = 10
+			martial = 2
+		}
+		powers = {
+			warrior_lodge_inspire_warriors #Power: Inspire Warriors
+			military_order_create_chapter #Power: Create Local Chapter
+		}
+	}
+
+	society_rank = { #"Grandmaster"
+		level = 4
+		limit = 1
+		startup_limit = 1
+		modifier = { 
+			monthly_character_piety = 1
+			combat_rating = 15
+			martial = 3
+		}
+		powers = {
+			#warrior_lodge_indomitable #Passive Power: Indomitable
+			#warrior_lodge_call_to_glory #Power: Call to Glory
+			#warrior_lodge_choose_military_aspect #Power: Choose Military Aspect
+		}
+	}
+
+	plots = {
+	
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_military_order
+    	
+		per_attribute = {
+    		name = martial
+    		value = 0.25
+    	}
+		#virtues
+		has_trait = {
+			trait = chaste
+			value = 1
+		}
+		has_trait = {
+			trait = temperate
+			value = 1
+		}
+		has_trait = {
+			trait = charitable
+			value = 1
+		}
+		has_trait = {
+			trait = diligent
+			value = 1
+		}
+		has_trait = {
+			trait = patient
+			value = 1
+		}
+		has_trait = {
+			trait = kind
+			value = 1
+		}
+		has_trait = {
+			trait = humble
+			value = 1
+		}
+		# religious stuff
+		has_trait = {
+			trait = zealous
+			value = 3
+		}
+		has_trait = {
+			trait = crusader
+			value = 3
+		}
+		has_trait = {
+			trait = crusader_king
+			value = 4
+		}
+		has_trait = {
+			trait = crusader_queen
+			value = 4
+		}
+		has_trait = {
+			trait = pilgrim
+			value = 2
+		}
+		has_trait = {
+			trait = monk
+			value = 5
+		}
+		has_trait = {
+			trait = nun
+			value = 5
+		}
+		has_trait = {
+			trait = theologian
+			value = 1
+		}
+		# martial stuff
+		has_trait = {
+			trait = brave
+			value = 2
+		}
+		has_trait = {
+			trait = strong
+			value = 3
+		}
+		has_trait = {
+			trait = robust
+			value = 2
+		}
+		has_trait = {
+			trait = strategist
+			value = 1
+		}
+		has_trait = {
+			trait = duelist
+			value = 1
+		}
+		has_trait = {
+			trait = varangian
+			value = 1
+		}
+		#NEGATIVE modifiers
+		has_trait = {
+			trait = lustful
+			value = -1
+		}
+		has_trait = {
+			trait = gluttonous
+			value = -1
+		}
+		has_trait = {
+			trait = greedy
+			value = -1
+		}
+		has_trait = {
+			trait = slothful
+			value = -1
+		}
+		has_trait = {
+			trait = wroth
+			value = -1
+		}
+		has_trait = {
+			trait = envious
+			value = -1
+		}
+		has_trait = {
+			trait = proud
+			value = -1
+		}
+		has_trait = {
+			trait = craven
+			value = -3
+		}
+		has_trait = {
+			trait = weak
+			value = -2
+		}
+		has_trait = {
+			trait = feeble
+			value = -1
+		}
+		has_trait = {
+			trait = dwarf
+			value = -1
+		}
+		has_trait = {
+			trait = clubfooted
+			value = -1
+		}
+		has_trait = {
+			trait = hunchback
+			value = -1
+		}
+	}
+	
+	member_score_per_attribute = 0
+	member_score_per_rank = 0
+
+	member_score = {
+		value = 10
+
+		#POSITIVE modifiers
+		modifier = {
+			ai = yes
+			factor = 100
+		}
+	}	
+
+	startup_populate = {
+		trigger = {
+			ai = yes
+	    	controls_religion = no
+		   	religion = catholic
+			age = 16
+			is_female = no
+			is_in_society = no
+			NOT = { higher_tier_than = DUKE }
+			NOR = {
+				mercenary = yes
+				holy_order = yes
+			}
+			NOT = { trait = cynical }
+			NOT = { trait = excommunicated }
+			has_secret_religion_trait_trigger = no
+			OR = {
+				trait = zealous
+				martial = 12
+				has_lifestyle_martial_trigger = yes
+				has_education_martial_trigger = yes
+				OR = {
+					duelist_skill_is_medium_group_trigger = yes
+					duelist_skill_is_high_group_trigger = yes
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+castle = {
+	ca_military_order_chapter = {
+		desc = ca_military_order_chapter_desc
+		trigger = { always = yes }
+		potential = {
+			FROMFROM = { has_building = ca_military_order_chapter }
+		}
+		is_active_trigger = {
+			FROM = {
+				OR = {
+					religion = catholic
+					AND = {
+						is_heretic = no
+						OR = {
+							religion = fraticelli
+							religion = waldensian
+							religion = lollard
+							religion = cathar
+						}
+					}
+				}
+				liege = {
+					OR = {
+						religion = catholic
+						AND = {
+							is_heretic = no
+							OR = {
+								religion = fraticelli
+								religion = waldensian
+								religion = lollard
+								religion = cathar
+							}
+						}
+				}
+				}
+				capital_holding = {
+					title = FROMFROM
+				}
+			}
+		}
+		knights = 25
+		light_cavalry = 100
+	}
+}

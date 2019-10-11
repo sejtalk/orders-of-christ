@@ -1,0 +1,19 @@
+spriteTypes = {
+
+	##### Templars #####
+	spriteType = {
+		name = "GFX_society_main_background_military_order_templar"
+		texturefile = "gfx\\interface\\societies\\society_bg_templars.dds"
+	}
+	##### Hospitallers #####
+	spriteType = {
+		name = "GFX_society_main_background_military_order_hospitaller"
+		texturefile = "gfx\\interface\\societies\\society_bg_hospitallers.dds"
+	}
+	##### Teutons #####
+	spriteType = {
+		name = "GFX_society_main_background_military_order_teutonic"
+		texturefile = "gfx\\interface\\societies\\society_bg_teutons.dds"
+	}
+	
+}

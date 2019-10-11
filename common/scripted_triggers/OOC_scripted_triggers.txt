@@ -1,0 +1,7 @@
+is_member_of_military_order = {
+	OR = {
+		society_member_of = military_order_templar
+		society_member_of = military_order_hospitaller
+		society_member_of = military_order_teutonic
+	}
+}

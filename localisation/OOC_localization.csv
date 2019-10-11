@@ -1,0 +1,27 @@
+military_order_templar;The Knights Templar;;;;;;;;;;;;;x
+military_order_templar_desc;Burn the heretic. Kill the mutant. Purge the unclean.;;;;;;;;;;;;;x
+military_order_templar_rank_1_male;Knight;;;;;;;;;;;;;x
+military_order_templar_rank_2_male;Commander;;;;;;;;;;;;;x
+military_order_templar_rank_3_male;Master;;;;;;;;;;;;;x
+military_order_templar_rank_4_male;Grandmaster;;;;;;;;;;;;;x
+holy_knight_leader;Holy Knight;;;;;;;;;;;;;x
+holy_knight_leader_desc;Deus Vult!;;;;;;;;;;;;;x
+
+military_order_go_celibate;Take a vow of Celibacy;;;;;;;;;;;;;x
+military_order_go_celibate_desc;.;;;;;;;;;;;;;x
+military_order_stop_celibate;Renounce vow of Celibacy;;;;;;;;;;;;;x
+military_order_stop_celibate_desc;.;;;;;;;;;;;;;x
+military_order_summon_commander;Summon Order Commander;;;;;;;;;;;;;x
+military_order_summon_commander_desc;.;;;;;;;;;;;;;x
+military_order_request_horse;Request War Horse;;;;;;;;;;;;;x
+military_order_request_horse_desc;.;;;;;;;;;;;;;x
+warrior_training_military_order;Knight Training;;;;;;;;;;;;;x
+warrior_training_military_order_desc;.;;;;;;;;;;;;;x
+military_order_create_chapter;Create Local Chapter;;;;;;;;;;;;;x
+military_order_create_chapter_desc;.;;;;;;;;;;;;;x
+military_order_create_chapter_power_desc;Enables you to §Gright-click§! on your capital holding to create Order Chapter building there.;;;;;;;;;;;;;x
+military_order_inspire_warriors;Inspire Levies;;;;;;;;;;;;;x
+military_order_inspire_warriors_desc;.;;;;;;;;;;;;;x
+
+ca_military_order_chapter;Order Chapter;;;;;;;;;;;;;x
+ca_military_order_chapter_desc;.;;;;;;;;;;;;;x

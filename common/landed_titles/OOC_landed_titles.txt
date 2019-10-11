@@ -1,0 +1,58 @@
+d_holy_sepulchre_true = {
+
+	color={ 120 0 145 }
+	
+	graphical_culture = holygfx
+	
+	capital = 774
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = catholic
+	
+	culture = frankish
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = holy_sepulchre_true_composition
+}
+d_dobrzyn_order = {
+
+	color={ 120 0 145 }
+	
+	graphical_culture = holygfx
+	
+	capital = 1581
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = catholic
+	
+	culture = polish
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = dobrzyn_order_composition
+}

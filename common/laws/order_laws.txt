@@ -1,0 +1,24 @@
+# succession_laws = {
+	# succ_order_elective = {
+		# potential = {
+			# title = d_knights_templar #Title-bound.
+		# }
+		# allow = {
+			# custom_tooltip = {
+				# text = not_forced_tt
+				# hidden_tooltip = {
+					# holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
+				# }
+			# }
+		# }
+		# effect = {
+			# succession = {
+				# base_type = feudal_elective
+				# voting_rules = order_elective
+			# }
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }			
+	# }
+# }
